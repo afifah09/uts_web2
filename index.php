@@ -10,9 +10,12 @@
 
     <title>Data Pemantaun Covid19 Wilayah Jawa Barat</title>
     <style>
+    .daftar{
+      font-weight: bold;
+    }
     form{
       background-color:bisque;
-
+     
     }
       .box{
         padding: 30px 40px;
@@ -29,6 +32,9 @@
   </head>
   <body>
   <form action="" method="post">
+      <center>
+    <div class="daftar">DAFTAR YANG TERKENA COVID-19</div>
+    <p>
     <table>
       <tr>
           <td for="wilayah">Nama Wilayah </td>
@@ -82,6 +88,7 @@
         <td>
       <button type="submit" name="submit" class="btn-submit">SUBMIT</button>
   </table>
+  </center>
   </form>
   </div>
   <?php 
