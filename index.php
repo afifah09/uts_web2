@@ -10,6 +10,10 @@
 
     <title>Data Pemantaun Covid19 Wilayah Jawa Barat</title>
     <style>
+    form{
+      background-color:bisque;
+
+    }
       .box{
         padding: 30px 40px;
         border-radius: 5px;
@@ -25,9 +29,11 @@
   </head>
   <body>
   <form action="" method="post">
-      <ul>
-        <li>
-          <label for="wilayah">Nama Wilayah : </label>
+    <table>
+      <tr>
+          <td for="wilayah">Nama Wilayah </td>
+          <td>:</td>
+          <td>
           <select name="wilayah" id="wilayah" required>
             <option value="" disabled selected>Pilih Wilayah</option>
             <option value="DKI Jakarta">DKI Jakarta</option>
@@ -35,34 +41,49 @@
             <option value="Banten">Banten</option>
             <option value="Jawa Tengah">Jawa Tengah</option>
           </select>
-        </li>
-        <li>
-         <label for="Positif">Jumlah Positif : </label>
+          <td>
+        </tr>
+        <tr>
+         <td for="Positif">Jumlah Positif</td>
+         <td>:</td>
+         <td>
           <input type="text" name="positif" id="positif" required>
-        </li>
-        <li>
-         <label for="Dirawat">Jumlah Dirawat : </label>
+        </tr>
+        <tr>
+         <td for="Dirawat">Jumlah Dirawat</td>
+         <td>:</td>
+         <td>
           <input type="text" name="dirawat" id="dirawat" required>
-        </li>
-        <li>
-         <label for="Sembuh">Jumlah Sembuh : </label>
+        </tr>
+        <tr>
+         <td for="Sembuh">Jumlah Sembuh</td>
+         <td>:</td>
+         <td>
           <input type="text" name="sembuh" id="sembuh" required>
-        </li>
-        <li>
-         <label for="Meninggal">Jumlah Meninggal : </label>
+        </tr>
+        <tr>
+         <td for="Meninggal">Jumlah Meninggal </td>
+         <td>:</td>
+         <td>
           <input type="text" name="meninggal" id="meninggal" required>
-        </li>
-        <li>
-         <label for="Operator">Nama Operator  : </label>
+        </tr>
+        <tr>
+         <td for="Operator">Nama Operator </td>
+         <td>:</td>
+         <td>
           <input type="text" name="operator" id="operator" required>
-        <li>
-        <li>
-         <label for="NIM">NIM Mahasiswa  : </label>
+        </tr>
+        <tr>
+         <td for="NIM">NIM Mahasiswa</td>
+         <td>:</td>
+         <td>
           <input type="text" name="nim" id="nim" required>
-        <li>
-      </ul>
+        </tr>
+        <td>
       <button type="submit" name="submit" class="btn-submit">SUBMIT</button>
+  </table>
   </form>
+  </div>
   <?php 
     if(isset($_POST["submit"])){
       $wilayah = $_POST["wilayah"];
@@ -78,8 +99,7 @@
         <div class="container text-center">
             <h1 class="display-4">Data Pemantauan Covid-19 Wilayah <?php echo $wilayah; ?></h1>
             <?php
-              $date = time();
-              echo $date->format('d-m-Y : H:i:s');
+              echo date('d F Y h:i:s',time())
             ?>
             <p class="lead">
               <h3><?php echo $operator.'/'.$nim; ?></h3>
